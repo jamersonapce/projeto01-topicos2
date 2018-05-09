@@ -5,5 +5,10 @@ jdk:
 services:
   - mysql
 
+test:
+  database: lojadb
+  username: travis
+  encoding: utf8
+
 before_install:
-  - mysql -e 'CREATE DATABASE lojadb;'
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS lojadb;'
